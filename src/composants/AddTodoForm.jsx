@@ -7,7 +7,6 @@ export default function AddTodoForm({ onAdd }) {
   const [error, setError] = useState("");
 
   // fonction de soumission du formulaire
-  // ceci est un commentaire
   const handleSubmit = (e) => {
     // empêche le rafraîchissement de la page
     e.preventDefault();
