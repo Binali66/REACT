@@ -38,37 +38,38 @@ export default function AddTodoForm({ onAdd }) {
     <form onSubmit={handleSubmit} className="space-y-3">
       <div>
         <label htmlFor="title" className="block text-sm font-medium">
-          Titre de la tâche *
+          Titre de la tâche 
         </label>
         <input
           id="title"
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          placeholder="Ex : Acheter du lait"
-          className="mt-1 w-full rounded-lg border px-3 py-2 outline-none focus:ring focus:ring-indigo-300"
+          placeholder="Ex : Faire ses devoirs"
+          className="w-full border rounded px-2 py-2"
         />
         {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
       </div>
 
       <div>
         <label htmlFor="note" className="block text-sm font-medium">
-          Note (optionnel)
+          Note 
         </label>
         <textarea
           id="note"
           value={note}
           onChange={(e) => setNote(e.target.value)}
-          rows={3}
+          rows={3} // pour avoir plus de place dans la case.
           placeholder="Détail, lieu, etc."
-          className="mt-1 w-full rounded-lg border px-3 py-2 outline-none focus:ring focus:ring-indigo-300"
+          className="w-full border rounded "
         />
       </div>
 
       <button
-        type="submit"
-        disabled={!title.trim()}
-        className="w-full rounded-lg bg-indigo-600 px-4 py-2 font-semibold text-white disabled:opacity-50"
+        type="submit" // attribut soumis aux formulaire.
+        disabled={!title.trim()} // désactive le champ du titre s'il est vide, meme avec des espaces.
+        // prend toute la largeur du bouton, arrondi les coté, fond du bouton en bleu; texte en blanc et la couleur devient semi-transparent.
+        className="w-full border rounded-lg bg-blue-700 ; text-white disabled:opacity-50"
       >
         Ajouter
       </button>
